@@ -1,7 +1,7 @@
 {
   "name": "js-assert",
   "version": "1.0.0",
-  "description": "ES6 starter project, containing webpack builder, gulp babel builder, etc",
+  "description": "JS assert implementation (work like java \"assert\") which only exists on debug mode",
   "files": [
     "src"
   ],
@@ -11,18 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adventure-yunfei/es6-starter-project.git"
+    "url": "git+https://github.com/adventure-yunfei/js-assert.git"
   },
   "keywords": [
-    "es6",
-    "babel"
+    "assert"
   ],
   "author": "yunfei",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adventure-yunfei/es6-starter-project/issues"
+    "url": "https://github.com/adventure-yunfei/js-assert/issues"
   },
-  "homepage": "https://github.com/adventure-yunfei/es6-starter-project#readme",
+  "homepage": "https://github.com/adventure-yunfei/js-assert#readme",
   "devDependencies": {
     "babel": "^5.8.34",
     "babel-core": "^5.8.34",
