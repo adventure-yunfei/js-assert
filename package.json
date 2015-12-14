@@ -1,12 +1,13 @@
 {
   "name": "js-assert",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "JS assert implementation (work like java \"assert\") which only exists on debug mode",
   "files": [
-    "src"
+    "lib"
   ],
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
