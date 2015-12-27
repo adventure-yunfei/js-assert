@@ -5,7 +5,7 @@ export default function makeWebpackConfig(isDev) {
     return {
         context: ROOT,
         entry: {
-            bundle: `${SRC_DIR}/index.js`
+            bundle: `${SRC_DIR}/__assert__.js`
         },
         debug: isDev,
         devtool: isDev ? 'cheap-module-source-map' : '',
