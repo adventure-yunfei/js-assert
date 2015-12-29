@@ -1,19 +1,43 @@
-# ECMAScript 6 starter project
+# JS Assert
 
-A starter project to embrace incoming es6 js.
+### What it does?
 
-# What it has?
+To add check on debug mode only (similar to java "assert" keyword) and being removed on production mode
 
-- Babel es6 compiler to transform es6 source code to es5 code
-- Webpack tuned to build one file bundle
-- Auto-Produce es5 code output when using as npm package
-- ESLint tuned to ensure better code style
+### How to use it?
 
-# How to use it
+###### By Webpack:
 
-1. Download the code
-2. Run "npm install"
-3. Run "npm install gulp -g" to install gulp globally (if you haven't installed it yet)
-3. Writing your es6 code as you wish - note "src/index.js" is the bundle main file
-4. When finish coding, run "gulp". It'll produce es5 output for each file under "lib/", and the bundled file under "bundles/"
-5. When using as npm package, it's tuned to export compiled code under "lib/" and "bundles/". No need to manually compile es6 code
+Add webpack-assert-loader as the first loader of js;
+Add webpack-assert-plugin in plugins section.
+
+An example to config webpack:
+
+```javascript
+var WebpackAssertPlugin = require('js-assert/webpack-assert-plugin');
+
+var webpackConfig = {
+    /* ... other webpack config ...*/
+    module: {
+        loaders: {[
+            test: /\.js$/,
+            loader: 'js-assert/webpack-assert-loader'
+        ]}
+    },
+    plugins: [
+        new WebpackAssertPlugin(isDev) // isDev is a flag produced on building to indicate whether it's for debug mode
+        /* ... other plugins ...*/
+    ]
+};
+```
+
+It's achieved by setting a global "__DEV__" boolean variable by webpack-assert-plugin,
+and replace "__assert__" call to add "__DEV__" check,
+so webpack will strip "__assert__" call on production mode as "__DEV__" is false there.
+
+###### By UglifyJs Tool:
+
+Set "compress.pure_func" to include "__assert__" on production building.
+
+It's achieved by manually specifying the "__assert__" call doesn't affect anything.
+So it'll be stripped out (if it's returned result is not saved to some local variable...).

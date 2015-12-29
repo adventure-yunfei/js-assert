@@ -3,3 +3,5 @@ node_modules/
 /bundles/
 /lib/
 /__assert__.js
+/webpack-assert-loader.js
+/webpack-assert-plugin.js

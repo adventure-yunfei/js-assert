@@ -1,11 +1,12 @@
 {
   "name": "js-assert",
-  "version": "0.0.2",
+  "version": "1.0.3",
   "description": "JS assert implementation (work like java \"assert\") which only exists on debug mode",
   "files": [
-    "__assert__.js"
+    "__assert__.js",
+    "webpack-assert-loader.js",
+    "webpack-assert-plugin.js"
   ],
-  "main": "lib/jassert.js",
   "scripts": {
     "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
