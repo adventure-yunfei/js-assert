@@ -1,33 +1,26 @@
 # JS Assert
 
-### What it does?
+# What it does?
 
 To add check on debug mode only (similar to java "assert" keyword) and being removed on production mode
 
-### How to use it?
+# How to use it?
 
 ###### By Webpack:
 
-Add webpack-assert-loader as the first loader of js;
-Add webpack-assert-plugin in plugins section.
+Add webpack-assert-loader as the first loader of js, with "dev" query param specified.
 
 An example to config webpack:
 
 ```javascript
-var WebpackAssertPlugin = require('js-assert/webpack-assert-plugin');
-
 var webpackConfig = {
     /* ... other webpack config ...*/
     module: {
         loaders: {[
             test: /\.js$/,
-            loader: 'js-assert/webpack-assert-loader'
+            loader: 'js-assert/webpack-assert-loader?dev=' + (isDev ? 'true' : 'false')
         ]}
-    },
-    plugins: [
-        new WebpackAssertPlugin(isDev) // isDev is a flag produced on building to indicate whether it's for debug mode
-        /* ... other plugins ...*/
-    ]
+    }
 };
 ```
 
@@ -41,3 +34,11 @@ Set "compress.pure_func" to include "__assert__" on production building.
 
 It's achieved by manually specifying the "__assert__" call doesn't affect anything.
 So it'll be stripped out (if it's returned result is not saved to some local variable...).
+
+# Changes Log
+
+### [Latest](https://github.com/adventure-yunfei/js-assert/compare/1.0.3...master)
+
+- Use a single webpack loader to strip `__assert__` call on production mode, instead of cooperated with another webpack plugin
+
+### [1.0.3](https://github.com/adventure-yunfei/js-assert/tree/1.0.3)

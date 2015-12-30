@@ -34,6 +34,7 @@
     "gulp-babel": "^5.3.0",
     "gulp-eslint": "^1.1.1",
     "gulp-util": "^3.0.7",
+    "loader-utils": "^0.2.12",
     "rimraf": "^2.4.4",
     "run-sequence": "^1.1.5",
     "webpack": "^1.12.9",
