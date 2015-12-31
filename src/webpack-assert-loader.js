@@ -10,7 +10,9 @@ import loaderUtils from 'loader-utils';
 export default function (source) {
     let {dev} = loaderUtils.parseQuery(this.query);
     if (typeof dev !== 'boolean') {
-        console.log(`WARN: webpack-assert-loader requires a BOOLEAN "dev" param, but get "${dev}". Fallback to "true" instead`)
+        /* global console */
+        /* eslint no-console: 0 */
+        console.log(`WARN: webpack-assert-loader requires a BOOLEAN "dev" param, but get "${dev}". Fallback to "true" instead`);
         dev = true;
     }
     return source.replace(/__assert__\s*\(/g, `${dev ? 'true' : 'false'} && __assert__(`);
