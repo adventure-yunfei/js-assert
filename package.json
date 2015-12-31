@@ -1,6 +1,6 @@
 {
   "name": "js-assert",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "JS assert implementation (work like java \"assert\") which only exists on debug mode",
   "files": [
     "__assert__.js",
