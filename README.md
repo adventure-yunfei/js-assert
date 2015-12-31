@@ -36,7 +36,7 @@ So it'll be stripped out (if it's returned result is not saved to some local var
 
 # Changes Log
 
-### [2.0.1](https://github.com/adventure-yunfei/js-assert/compare/1.0.3...2.0.1)
+### [2.0.3](https://github.com/adventure-yunfei/js-assert/compare/1.0.3...2.0.3)
 
 - Use a single webpack loader to strip `__assert__` call on production mode, instead of cooperated with another webpack plugin
 
