@@ -24,15 +24,14 @@ var webpackConfig = {
 };
 ```
 
-It's achieved by setting a global "__DEV__" boolean variable by webpack-assert-plugin,
-and replace "__assert__" call to add "__DEV__" check,
-so webpack will strip "__assert__" call on production mode as "__DEV__" is false there.
+It's achieved by replacing `__assert__` call to add dev check in webpack-assert-loader,
+so webpack will strip `__assert__` call on production mode.
 
 ###### By UglifyJs Tool:
 
-Set "compress.pure_func" to include "__assert__" on production building.
+Set `compress.pure_func` to include `__assert__` on production building.
 
-It's achieved by manually specifying the "__assert__" call doesn't affect anything.
+It's achieved by manually specifying the `__assert__` call doesn't affect anything.
 So it'll be stripped out (if it's returned result is not saved to some local variable...).
 
 # Changes Log
